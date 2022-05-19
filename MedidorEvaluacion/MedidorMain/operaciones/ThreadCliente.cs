@@ -29,8 +29,8 @@ namespace MedidorMain {
             } else {
                 Medidor medidor = new Medidor() {
                     IdMedidor = id,
-                    Consumo = Convert.ToDouble(datos[1]),
-                    FechaIngreso = DateTime.ParseExact(datos[2],formato,null)
+                    Consumo = Convert.ToDouble(datos[2]),
+                    FechaIngreso = DateTime.ParseExact(datos[1],formato,null)
                 };
 
                 lock(lectura) {

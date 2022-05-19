@@ -49,7 +49,7 @@ namespace MedidorCliente {
             } while(!esValido);
             fecha = DateTime.Now;
              
-            lectura = id+"|"+consumo+"|"+fecha.ToString("yyyy-MM-dd-HH-mm-ss");
+            lectura = id+"|"+ fecha.ToString("yyyy-MM-dd-HH-mm-ss") + "|"+ consumo;
             Console.WriteLine(lectura);
             return lectura;
         }

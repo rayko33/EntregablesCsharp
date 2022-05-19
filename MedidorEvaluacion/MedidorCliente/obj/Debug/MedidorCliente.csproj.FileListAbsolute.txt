@@ -5,3 +5,10 @@ C:\Users\Rayko\Documents\Visual Studio22\MedidorEvaluacion\MedidorCliente\obj\De
 C:\Users\Rayko\Documents\Visual Studio22\MedidorEvaluacion\MedidorCliente\obj\Debug\MedidorCliente.csproj.CoreCompileInputs.cache
 C:\Users\Rayko\Documents\Visual Studio22\MedidorEvaluacion\MedidorCliente\obj\Debug\MedidorCliente.exe
 C:\Users\Rayko\Documents\Visual Studio22\MedidorEvaluacion\MedidorCliente\obj\Debug\MedidorCliente.pdb
+C:\Users\Rayko\Documents\EntregablesCsharp 2022\MedidorEvaluacion\MedidorCliente\obj\Debug\MedidorCliente.csproj.AssemblyReference.cache
+C:\Users\Rayko\Documents\EntregablesCsharp 2022\MedidorEvaluacion\MedidorCliente\obj\Debug\MedidorCliente.csproj.CoreCompileInputs.cache
+C:\Users\Rayko\Documents\EntregablesCsharp 2022\MedidorEvaluacion\MedidorCliente\obj\Debug\MedidorCliente.exe
+C:\Users\Rayko\Documents\EntregablesCsharp 2022\MedidorEvaluacion\MedidorCliente\obj\Debug\MedidorCliente.pdb
+C:\Users\Rayko\Documents\EntregablesCsharp 2022\MedidorEvaluacion\MedidorCliente\bin\Debug\MedidorCliente.exe.config
+C:\Users\Rayko\Documents\EntregablesCsharp 2022\MedidorEvaluacion\MedidorCliente\bin\Debug\MedidorCliente.exe
+C:\Users\Rayko\Documents\EntregablesCsharp 2022\MedidorEvaluacion\MedidorCliente\bin\Debug\MedidorCliente.pdb
