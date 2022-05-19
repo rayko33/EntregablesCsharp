@@ -1,0 +1,6 @@
+C:\Users\Rayko\Documents\Visual Studio22\MedidorEvaluacion\ServerUtilidades\bin\Debug\ServerUtilidades.dll
+C:\Users\Rayko\Documents\Visual Studio22\MedidorEvaluacion\ServerUtilidades\bin\Debug\ServerUtilidades.pdb
+C:\Users\Rayko\Documents\Visual Studio22\MedidorEvaluacion\ServerUtilidades\obj\Debug\ServerUtilidades.csproj.AssemblyReference.cache
+C:\Users\Rayko\Documents\Visual Studio22\MedidorEvaluacion\ServerUtilidades\obj\Debug\ServerUtilidades.csproj.CoreCompileInputs.cache
+C:\Users\Rayko\Documents\Visual Studio22\MedidorEvaluacion\ServerUtilidades\obj\Debug\ServerUtilidades.dll
+C:\Users\Rayko\Documents\Visual Studio22\MedidorEvaluacion\ServerUtilidades\obj\Debug\ServerUtilidades.pdb

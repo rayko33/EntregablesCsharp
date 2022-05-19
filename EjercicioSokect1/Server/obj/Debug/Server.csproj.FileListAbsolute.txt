@@ -1,0 +1,7 @@
+C:\Users\Rayko\Documents\Visual Studio22\EjercicioSokect1\Server\bin\Debug\Server.exe.config
+C:\Users\Rayko\Documents\Visual Studio22\EjercicioSokect1\Server\bin\Debug\Server.exe
+C:\Users\Rayko\Documents\Visual Studio22\EjercicioSokect1\Server\bin\Debug\Server.pdb
+C:\Users\Rayko\Documents\Visual Studio22\EjercicioSokect1\Server\obj\Debug\Server.csproj.AssemblyReference.cache
+C:\Users\Rayko\Documents\Visual Studio22\EjercicioSokect1\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\Rayko\Documents\Visual Studio22\EjercicioSokect1\Server\obj\Debug\Server.exe
+C:\Users\Rayko\Documents\Visual Studio22\EjercicioSokect1\Server\obj\Debug\Server.pdb
