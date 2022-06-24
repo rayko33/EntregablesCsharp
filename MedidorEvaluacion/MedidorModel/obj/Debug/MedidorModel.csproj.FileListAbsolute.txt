@@ -4,3 +4,8 @@ C:\Users\Rayko\Documents\Visual Studio22\MedidorEvaluacion\MedidorModel\obj\Debu
 C:\Users\Rayko\Documents\Visual Studio22\MedidorEvaluacion\MedidorModel\obj\Debug\MedidorModel.csproj.CoreCompileInputs.cache
 C:\Users\Rayko\Documents\Visual Studio22\MedidorEvaluacion\MedidorModel\obj\Debug\MedidorModel.dll
 C:\Users\Rayko\Documents\Visual Studio22\MedidorEvaluacion\MedidorModel\obj\Debug\MedidorModel.pdb
+C:\Users\Rayko\Documents\EntregablesCsharp 2022\MedidorEvaluacion\MedidorModel\bin\Debug\MedidorModel.dll
+C:\Users\Rayko\Documents\EntregablesCsharp 2022\MedidorEvaluacion\MedidorModel\bin\Debug\MedidorModel.pdb
+C:\Users\Rayko\Documents\EntregablesCsharp 2022\MedidorEvaluacion\MedidorModel\obj\Debug\MedidorModel.csproj.CoreCompileInputs.cache
+C:\Users\Rayko\Documents\EntregablesCsharp 2022\MedidorEvaluacion\MedidorModel\obj\Debug\MedidorModel.dll
+C:\Users\Rayko\Documents\EntregablesCsharp 2022\MedidorEvaluacion\MedidorModel\obj\Debug\MedidorModel.pdb

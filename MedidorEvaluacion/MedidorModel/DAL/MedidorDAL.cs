@@ -6,21 +6,30 @@ using System.Threading.Tasks;
 
 namespace MedidorModel {
     public class MedidorDAL : IMedidorDAL {
-        private ILecturaDAL lectura = LecutraDALArchivo.getInstancia();
-        private static MedidorDAL instancia;
+        
 
-        private MedidorDAL() {
-        }
-        public static IMedidorDAL getInstancia() {
-            if(instancia == null) {
-                instancia = new MedidorDAL();
+       
+        public static List<Medidor> medidores = new List<Medidor>();
+
+        public bool ExisteMedidor(int id) {
+            if(medidores.Find(m => m.IdMedidor == id) != null) {
+                return true;
             }
-            return instancia;
+            return false;
         }
-        public static List<Medidor> medidores;
+
+        public List<Medidor> Filtrar(int tipo) {
+
+            return medidores.FindAll(m => m.Tipo == tipo);
+        }
+
+        public void IngresarMedidores(Medidor medidor) {
+            medidores.Add(medidor);
+        }
+
         public List<Medidor> ObtenerMedidores() {
-            medidores = new List<Medidor>(lectura.ObetenerLectura());
             return medidores;
         }
+        
     }
 }

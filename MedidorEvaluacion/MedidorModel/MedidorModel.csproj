@@ -43,8 +43,9 @@
   <ItemGroup>
     <Compile Include="DAL\ILecturaDAL.cs" />
     <Compile Include="DAL\IMedidorDAL.cs" />
-    <Compile Include="DAL\LecutraDALArchivo.cs" />
+    <Compile Include="DAL\LecutraDALObjeto.cs" />
     <Compile Include="DAL\MedidorDAL.cs" />
+    <Compile Include="DTO\Lectura.cs" />
     <Compile Include="DTO\Medidor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

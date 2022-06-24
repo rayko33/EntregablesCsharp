@@ -7,20 +7,33 @@ using System.Threading.Tasks;
 namespace MedidorModel {
     public class Medidor {
         private int idMedidor;
-        private DateTime fechaIngreso;
-        private double consumo;
+        private int tipo;
+        
 
+        public string Textotipo{
+            get {
+                string tipoTxt = "";
+                switch(tipo) {
+                    case 1:
+                        tipoTxt = "Smart";
+                        break;
+                    case 2:
+                        tipoTxt = "Convencional";
+                        break;
+                }
+                return tipoTxt;
+            }
+            
+        }
         public int IdMedidor {
             get => idMedidor;
             set => idMedidor = value;
         }
-        public DateTime FechaIngreso {
-            get => fechaIngreso;
-            set => fechaIngreso = value;
+   
+        public int Tipo {
+            get => tipo;
+            set => tipo = value;
         }
-        public double Consumo {
-            get => consumo;
-            set => consumo = value;
-        }
+        
     }
 }
