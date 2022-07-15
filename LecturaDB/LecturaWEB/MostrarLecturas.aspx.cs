@@ -47,7 +47,9 @@ namespace LecturaWEB {
             if(e.CommandName=="eliminar") {
                 int id = Convert.ToInt32(e.CommandArgument);
                 this.lecturaDALDB.EliminarLectura(id);
+                this.mensajeLbl.Text = "Lectura Eliminada con exito";
                 CargarGrilla();
+                
             }
         }
     }

@@ -10,6 +10,9 @@
 
     <div class="row">
         <div class="col-lg-6 mx-auto">
+            <div class="mensaje">
+                <asp:Label runat="server" ID="mensajeLbl" CssClass="text-success"></asp:Label>
+            </div>
             <div class="card">
                 <div class="card-header bg-danger text-white">
                     <h3>Ver Lecturas</h3>
@@ -52,4 +55,13 @@
             </div>
         </div>
     </div>
+    <script>
+        let lbm = document.getElementById("mensajeLbl").innerHTML;
+        if (lbm != "") {
+            setTimeout({
+                document.getElementById("mensajeLbl").innerHTML = "";
+            },4000);
+        }
+
+    </script>
 </asp:Content>
