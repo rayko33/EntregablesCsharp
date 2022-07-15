@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LecturaMedidorDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Lecturas">
+          <Key>
+            <PropertyRef Name="IdLectura" />
+          </Key>
+          <Property Name="IdLectura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Medidor" Type="int" />
+          <Property Name="Consumo" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="FechaIngreso" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="Medidores">
+          <Key>
+            <PropertyRef Name="IdMedidor" />
+          </Key>
+          <Property Name="IdMedidor" Type="int" Nullable="false" />
+          <Property Name="IdTipoMedidor" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoMedidor">
+          <Key>
+            <PropertyRef Name="IdTipo" />
+          </Key>
+          <Property Name="IdTipo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <Association Name="FK_Lecturas_Medidor">
+          <End Role="Medidores" Type="Self.Medidores" Multiplicity="0..1" />
+          <End Role="Lecturas" Type="Self.Lecturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medidores">
+              <PropertyRef Name="IdMedidor" />
+            </Principal>
+            <Dependent Role="Lecturas">
+              <PropertyRef Name="Medidor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Medidores_Tipo">
+          <End Role="TipoMedidor" Type="Self.TipoMedidor" Multiplicity="1" />
+          <End Role="Medidores" Type="Self.Medidores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoMedidor">
+              <PropertyRef Name="IdTipo" />
+            </Principal>
+            <Dependent Role="Medidores">
+              <PropertyRef Name="IdTipoMedidor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LecturaMedidorDBModelStoreContainer">
+          <EntitySet Name="Lecturas" EntityType="Self.Lecturas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Medidores" EntityType="Self.Medidores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoMedidor" EntityType="Self.TipoMedidor" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Lecturas_Medidor" Association="Self.FK_Lecturas_Medidor">
+            <End Role="Medidores" EntitySet="Medidores" />
+            <End Role="Lecturas" EntitySet="Lecturas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Medidores_Tipo" Association="Self.FK_Medidores_Tipo">
+            <End Role="TipoMedidor" EntitySet="TipoMedidor" />
+            <End Role="Medidores" EntitySet="Medidores" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LecturaMedidorDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Lectura">
+          <Key>
+            <PropertyRef Name="IdLectura" />
+          </Key>
+          <Property Name="IdLectura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Medidor" Type="Int32" />
+          <Property Name="Consumo" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="FechaIngreso" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Medidore" Relationship="Self.FK_Lecturas_Medidor" FromRole="Lecturas" ToRole="Medidores" />
+        </EntityType>
+        <EntityType Name="Medidore">
+          <Key>
+            <PropertyRef Name="IdMedidor" />
+          </Key>
+          <Property Name="IdMedidor" Type="Int32" Nullable="false" />
+          <Property Name="IdTipoMedidor" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Lecturas" Relationship="Self.FK_Lecturas_Medidor" FromRole="Medidores" ToRole="Lecturas" />
+          <NavigationProperty Name="TipoMedidor" Relationship="Self.FK_Medidores_Tipo" FromRole="Medidores" ToRole="TipoMedidor" />
+        </EntityType>
+        <EntityType Name="TipoMedidor">
+          <Key>
+            <PropertyRef Name="IdTipo" />
+          </Key>
+          <Property Name="IdTipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Medidores" Relationship="Self.FK_Medidores_Tipo" FromRole="TipoMedidor" ToRole="Medidores" />
+        </EntityType>
+        <Association Name="FK_Lecturas_Medidor">
+          <End Role="Medidores" Type="Self.Medidore" Multiplicity="0..1" />
+          <End Role="Lecturas" Type="Self.Lectura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medidores">
+              <PropertyRef Name="IdMedidor" />
+            </Principal>
+            <Dependent Role="Lecturas">
+              <PropertyRef Name="Medidor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Medidores_Tipo">
+          <End Role="TipoMedidor" Type="Self.TipoMedidor" Multiplicity="1" />
+          <End Role="Medidores" Type="Self.Medidore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoMedidor">
+              <PropertyRef Name="IdTipo" />
+            </Principal>
+            <Dependent Role="Medidores">
+              <PropertyRef Name="IdTipoMedidor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LecturaMedidorDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Lecturas" EntityType="Self.Lectura" />
+          <EntitySet Name="Medidores" EntityType="Self.Medidore" />
+          <EntitySet Name="TipoMedidors" EntityType="Self.TipoMedidor" />
+          <AssociationSet Name="FK_Lecturas_Medidor" Association="Self.FK_Lecturas_Medidor">
+            <End Role="Medidores" EntitySet="Medidores" />
+            <End Role="Lecturas" EntitySet="Lecturas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Medidores_Tipo" Association="Self.FK_Medidores_Tipo">
+            <End Role="TipoMedidor" EntitySet="TipoMedidors" />
+            <End Role="Medidores" EntitySet="Medidores" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LecturaMedidorDBModelStoreContainer" CdmEntityContainer="LecturaMedidorDBEntities">
+          <EntitySetMapping Name="Lecturas">
+            <EntityTypeMapping TypeName="LecturaMedidorDBModel.Lectura">
+              <MappingFragment StoreEntitySet="Lecturas">
+                <ScalarProperty Name="IdLectura" ColumnName="IdLectura" />
+                <ScalarProperty Name="Medidor" ColumnName="Medidor" />
+                <ScalarProperty Name="Consumo" ColumnName="Consumo" />
+                <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Medidores">
+            <EntityTypeMapping TypeName="LecturaMedidorDBModel.Medidore">
+              <MappingFragment StoreEntitySet="Medidores">
+                <ScalarProperty Name="IdMedidor" ColumnName="IdMedidor" />
+                <ScalarProperty Name="IdTipoMedidor" ColumnName="IdTipoMedidor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoMedidors">
+            <EntityTypeMapping TypeName="LecturaMedidorDBModel.TipoMedidor">
+              <MappingFragment StoreEntitySet="TipoMedidor">
+                <ScalarProperty Name="IdTipo" ColumnName="IdTipo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

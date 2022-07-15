@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LecturaMedidorDBModelStoreContainer" CdmEntityContainer="LecturaMedidorDBEntities">
+    <EntitySetMapping Name="Lecturas">
+      <EntityTypeMapping TypeName="LecturaMedidorDBModel.Lectura">
+        <MappingFragment StoreEntitySet="Lecturas">
+          <ScalarProperty Name="IdLectura" ColumnName="IdLectura" />
+          <ScalarProperty Name="Medidor" ColumnName="Medidor" />
+          <ScalarProperty Name="Consumo" ColumnName="Consumo" />
+          <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Medidores">
+      <EntityTypeMapping TypeName="LecturaMedidorDBModel.Medidore">
+        <MappingFragment StoreEntitySet="Medidores">
+          <ScalarProperty Name="IdMedidor" ColumnName="IdMedidor" />
+          <ScalarProperty Name="IdTipoMedidor" ColumnName="IdTipoMedidor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoMedidors">
+      <EntityTypeMapping TypeName="LecturaMedidorDBModel.TipoMedidor">
+        <MappingFragment StoreEntitySet="TipoMedidor">
+          <ScalarProperty Name="IdTipo" ColumnName="IdTipo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

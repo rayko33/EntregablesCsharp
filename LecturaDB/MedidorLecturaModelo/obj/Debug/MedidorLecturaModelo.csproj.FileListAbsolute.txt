@@ -1,0 +1,12 @@
+C:\Users\rayko\Documents\EntregablesCSharp\LecturaDB\MedidorLecturaModelo\bin\Debug\MedidorLecturaModelo.dll.config
+C:\Users\rayko\Documents\EntregablesCSharp\LecturaDB\MedidorLecturaModelo\bin\Debug\MedidorLecturaModelo.dll
+C:\Users\rayko\Documents\EntregablesCSharp\LecturaDB\MedidorLecturaModelo\bin\Debug\MedidorLecturaModelo.pdb
+C:\Users\rayko\Documents\EntregablesCSharp\LecturaDB\MedidorLecturaModelo\bin\Debug\EntityFramework.dll
+C:\Users\rayko\Documents\EntregablesCSharp\LecturaDB\MedidorLecturaModelo\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rayko\Documents\EntregablesCSharp\LecturaDB\MedidorLecturaModelo\bin\Debug\EntityFramework.xml
+C:\Users\rayko\Documents\EntregablesCSharp\LecturaDB\MedidorLecturaModelo\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rayko\Documents\EntregablesCSharp\LecturaDB\MedidorLecturaModelo\obj\Debug\MedidorLecturaModelo.csproj.AssemblyReference.cache
+C:\Users\rayko\Documents\EntregablesCSharp\LecturaDB\MedidorLecturaModelo\obj\Debug\MedidorLecturaModelo.csproj.CoreCompileInputs.cache
+C:\Users\rayko\Documents\EntregablesCSharp\LecturaDB\MedidorLecturaModelo\obj\Debug\MedidorLecturaModelo.csproj.CopyComplete
+C:\Users\rayko\Documents\EntregablesCSharp\LecturaDB\MedidorLecturaModelo\obj\Debug\MedidorLecturaModelo.dll
+C:\Users\rayko\Documents\EntregablesCSharp\LecturaDB\MedidorLecturaModelo\obj\Debug\MedidorLecturaModelo.pdb

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LecturaMedidorDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Lectura">
+    <Key>
+      <PropertyRef Name="IdLectura" />
+    </Key>
+    <Property Name="IdLectura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Medidor" Type="Int32" />
+    <Property Name="Consumo" Type="Decimal" Precision="18" Scale="3" />
+    <Property Name="FechaIngreso" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Medidore" Relationship="Self.FK_Lecturas_Medidor" FromRole="Lecturas" ToRole="Medidores" />
+  </EntityType>
+  <EntityType Name="Medidore">
+    <Key>
+      <PropertyRef Name="IdMedidor" />
+    </Key>
+    <Property Name="IdMedidor" Type="Int32" Nullable="false" />
+    <Property Name="IdTipoMedidor" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Lecturas" Relationship="Self.FK_Lecturas_Medidor" FromRole="Medidores" ToRole="Lecturas" />
+    <NavigationProperty Name="TipoMedidor" Relationship="Self.FK_Medidores_Tipo" FromRole="Medidores" ToRole="TipoMedidor" />
+  </EntityType>
+  <EntityType Name="TipoMedidor">
+    <Key>
+      <PropertyRef Name="IdTipo" />
+    </Key>
+    <Property Name="IdTipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Medidores" Relationship="Self.FK_Medidores_Tipo" FromRole="TipoMedidor" ToRole="Medidores" />
+  </EntityType>
+  <Association Name="FK_Lecturas_Medidor">
+    <End Role="Medidores" Type="Self.Medidore" Multiplicity="0..1" />
+    <End Role="Lecturas" Type="Self.Lectura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Medidores">
+        <PropertyRef Name="IdMedidor" />
+      </Principal>
+      <Dependent Role="Lecturas">
+        <PropertyRef Name="Medidor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Medidores_Tipo">
+    <End Role="TipoMedidor" Type="Self.TipoMedidor" Multiplicity="1" />
+    <End Role="Medidores" Type="Self.Medidore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoMedidor">
+        <PropertyRef Name="IdTipo" />
+      </Principal>
+      <Dependent Role="Medidores">
+        <PropertyRef Name="IdTipoMedidor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LecturaMedidorDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Lecturas" EntityType="Self.Lectura" />
+    <EntitySet Name="Medidores" EntityType="Self.Medidore" />
+    <EntitySet Name="TipoMedidors" EntityType="Self.TipoMedidor" />
+    <AssociationSet Name="FK_Lecturas_Medidor" Association="Self.FK_Lecturas_Medidor">
+      <End Role="Medidores" EntitySet="Medidores" />
+      <End Role="Lecturas" EntitySet="Lecturas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Medidores_Tipo" Association="Self.FK_Medidores_Tipo">
+      <End Role="TipoMedidor" EntitySet="TipoMedidors" />
+      <End Role="Medidores" EntitySet="Medidores" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

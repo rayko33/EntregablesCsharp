@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LecturaMedidorDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Lecturas">
+    <Key>
+      <PropertyRef Name="IdLectura" />
+    </Key>
+    <Property Name="IdLectura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Medidor" Type="int" />
+    <Property Name="Consumo" Type="decimal" Precision="18" Scale="3" />
+    <Property Name="FechaIngreso" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Medidores">
+    <Key>
+      <PropertyRef Name="IdMedidor" />
+    </Key>
+    <Property Name="IdMedidor" Type="int" Nullable="false" />
+    <Property Name="IdTipoMedidor" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoMedidor">
+    <Key>
+      <PropertyRef Name="IdTipo" />
+    </Key>
+    <Property Name="IdTipo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <Association Name="FK_Lecturas_Medidor">
+    <End Role="Medidores" Type="Self.Medidores" Multiplicity="0..1" />
+    <End Role="Lecturas" Type="Self.Lecturas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Medidores">
+        <PropertyRef Name="IdMedidor" />
+      </Principal>
+      <Dependent Role="Lecturas">
+        <PropertyRef Name="Medidor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Medidores_Tipo">
+    <End Role="TipoMedidor" Type="Self.TipoMedidor" Multiplicity="1" />
+    <End Role="Medidores" Type="Self.Medidores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoMedidor">
+        <PropertyRef Name="IdTipo" />
+      </Principal>
+      <Dependent Role="Medidores">
+        <PropertyRef Name="IdTipoMedidor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LecturaMedidorDBModelStoreContainer">
+    <EntitySet Name="Lecturas" EntityType="Self.Lecturas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Medidores" EntityType="Self.Medidores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoMedidor" EntityType="Self.TipoMedidor" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Lecturas_Medidor" Association="Self.FK_Lecturas_Medidor">
+      <End Role="Medidores" EntitySet="Medidores" />
+      <End Role="Lecturas" EntitySet="Lecturas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Medidores_Tipo" Association="Self.FK_Medidores_Tipo">
+      <End Role="TipoMedidor" EntitySet="TipoMedidor" />
+      <End Role="Medidores" EntitySet="Medidores" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

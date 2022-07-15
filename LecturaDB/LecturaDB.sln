@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LecturaWEB", "LecturaWEB\LecturaWEB.csproj", "{02DDAC64-87D4-48EA-9E0A-96C182EA7D6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedidorLecturaModelo", "MedidorLecturaModelo\MedidorLecturaModelo.csproj", "{BF514908-07F8-4AE7-96BC-9E145F711CD6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02DDAC64-87D4-48EA-9E0A-96C182EA7D6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02DDAC64-87D4-48EA-9E0A-96C182EA7D6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02DDAC64-87D4-48EA-9E0A-96C182EA7D6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02DDAC64-87D4-48EA-9E0A-96C182EA7D6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF514908-07F8-4AE7-96BC-9E145F711CD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF514908-07F8-4AE7-96BC-9E145F711CD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF514908-07F8-4AE7-96BC-9E145F711CD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF514908-07F8-4AE7-96BC-9E145F711CD6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {50D8940A-7FE8-4A42-81B9-2726D550F54A}
+	EndGlobalSection
+EndGlobal
