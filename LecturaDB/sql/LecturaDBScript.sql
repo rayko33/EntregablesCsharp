@@ -1,7 +1,7 @@
 USE [LecturaMedidorDB]
 GO
 
-/****** Object:  Table [dbo].[TipoMedidor]    Script Date: 15-07-2022 14:55:12 ******/
+/****** Object:  Table [dbo].[TipoMedidor]    Script Date: 18-07-2022 14:48:48 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -22,7 +22,7 @@ GO
 USE [LecturaMedidorDB]
 GO
 
-/****** Object:  Table [dbo].[Medidores]    Script Date: 15-07-2022 14:55:45 ******/
+/****** Object:  Table [dbo].[Medidores]    Script Date: 18-07-2022 14:48:57 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -51,20 +51,30 @@ GO
 USE [LecturaMedidorDB]
 GO
 
-/****** Object:  Table [dbo].[TipoMedidor]    Script Date: 15-07-2022 14:56:08 ******/
+/****** Object:  Table [dbo].[Lecturas]    Script Date: 18-07-2022 14:49:17 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [dbo].[TipoMedidor](
-	[IdTipo] [int] IDENTITY(1,1) NOT NULL,
-	[Nombre] [varchar](30) NULL,
- CONSTRAINT [PK_TipoMedidor] PRIMARY KEY CLUSTERED 
+CREATE TABLE [dbo].[Lecturas](
+	[IdLectura] [int] IDENTITY(1,1) NOT NULL,
+	[Medidor] [int] NULL,
+	[Consumo] [decimal](18, 3) NULL,
+	[FechaIngreso] [smalldatetime] NULL,
+ CONSTRAINT [PK_Lecturas] PRIMARY KEY CLUSTERED 
 (
-	[IdTipo] ASC
+	[IdLectura] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 
+ALTER TABLE [dbo].[Lecturas]  WITH CHECK ADD  CONSTRAINT [FK_Lecturas_Medidor] FOREIGN KEY([Medidor])
+REFERENCES [dbo].[Medidores] ([IdMedidor])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+
+ALTER TABLE [dbo].[Lecturas] CHECK CONSTRAINT [FK_Lecturas_Medidor]
+GO
