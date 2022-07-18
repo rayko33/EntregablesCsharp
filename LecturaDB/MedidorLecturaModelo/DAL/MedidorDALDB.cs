@@ -39,7 +39,7 @@ namespace LecturaMedidorDB.DAL {
 
         public List<Medidore> ObtenerMedidorPorTipo(int tipo) {
             var query = from med in this.lecturaMedidor.Medidores where
-                        med.IdMedidor == tipo select med;
+                        med.IdTipoMedidor == tipo select med;
             return query.ToList();
         }
     }

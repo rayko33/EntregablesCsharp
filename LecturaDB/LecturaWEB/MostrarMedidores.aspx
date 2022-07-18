@@ -8,6 +8,9 @@
 
     <div class="row">
         <div class="col-lg-6 mx-auto">
+            <div class="mensaje">
+                <asp:Label runat="server" ID="mensajeLbl" CssClass="text-danger">*Eliminar un medidor eliminara sus lecturas asociadas </asp:Label>
+            </div>
             <div class="card">
                 <div class="card-header bg-danger text-white">
                     <h3>Ver Medidor</h3>
